@@ -3,3 +3,6 @@ log/*
 uploads/*
 tmp/*
 config/initializers/mailer.rb
+.idea/
+.rvmrc
+.bundle
