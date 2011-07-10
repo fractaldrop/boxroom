@@ -1,14 +1,34 @@
 <% content_for :title, t(:upload_file) -%>
 
 <h1><%= content_for :title %></h1>
-<%= form_for [@target_folder, @file], :url => { :action => 'create' }, :html => { :multipart => true } do |f| %>
-	<%= f.error_messages %>
-	<p>
-		<%= f.label t(:select_file) %>:<br>
-		<%= f.file_field :attachment %>
-	</p>
-	<p>
-		<%= f.submit t(:upload) %> &nbsp; &mdash; &nbsp;
-		<%= link_to t(:back), folder_url(@target_folder) %>
-	</p>
+<%= form_for [@target_folder, @file], :url => {:action => 'create'}, :html => {:multipart => true} do |f| %>
+    <%= f.error_messages %>
+    <p>
+      <%= f.label t(:select_file) %>:<br>
+      <%= f.file_field :attachment %>
+    </p>
+    <p>
+      <%= f.submit t(:upload) %> &nbsp; &mdash; &nbsp;
+      <%= link_to t(:back), folder_url(@target_folder) %>
+    </p>
 <% end %>
+<div id="uploading" style="display: none;">
+  <div id="progress" class="bar">
+    <div id="progressbar">&nbsp;</div>
+  </div>
+</div>
+<div id="percents"></div>
+
+<script type="text/javascript">
+    $(function() {
+        $('form').uploadProgress({
+            start:function() {
+                $('#uploading').fadeIn("fast");
+            },
+            uploading: function(upload) {
+                $('#percents').html(upload.percents + '%');
+            },
+            interval: 2000
+        });
+    });
+</script>
