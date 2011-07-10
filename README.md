@@ -37,6 +37,14 @@ Follow the these steps:
  6. Enjoy!
 
 
+Using the progress bar server module
+------------------------------------
+If you want to display a progress bar during uploading you will need to use either
+Apache/Passenger or Nginx in combination with a special module.
+For more information, please visit http://wiki.nginx.org/HttpUploadProgressModule
+or https://github.com/drogus/apache-upload-progress-module
+
+
 Mail settings
 -------------
 Boxroom sends email when users want to reset their password or when they share files.
