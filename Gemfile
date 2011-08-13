@@ -1,11 +1,14 @@
 source 'http://rubygems.org'
+source "http://gems.github.com"
 
 gem 'rake', '0.8.7'
-gem 'rails'
+gem 'rails', '3.0.9'
 gem 'dynamic_form'
 gem 'acts_as_tree'
-gem 'paperclip'
+gem 'paperclip', "2.3.16"
 gem 'sqlite3'
+gem "jquery-rails"
+
 
 group :test do
   gem 'factory_girl_rails'

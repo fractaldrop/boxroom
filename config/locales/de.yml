@@ -260,6 +260,8 @@ de:
   select_file: Datei wählen
   upload_file: Datei hochladen
   upload: Hochladen
+  upload_success: "Die Datei %{file} wurde erfolgreich hochgeladen."
+  upload_error: "Beim Hochladen der Datei %{file} ist ein Fehler aufgetreten."
 
   #folders/edit
   rename_folder: Ordner umbenennen

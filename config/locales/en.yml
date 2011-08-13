@@ -251,6 +251,8 @@
   select_file: Select file
   upload_file: Upload file
   upload: Upload
+  upload_success: "The file %{file} was successfully uploaded."
+  upload_error: "There was a problem uploading %{file}."
 
   #folders/edit
   rename_folder: Rename folder

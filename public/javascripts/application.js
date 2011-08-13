@@ -1,13 +1,13 @@
-Event.observe(window, 'load', function() {
-	fadeout.delay(1.5, 'notice');
-	fadeout.delay(1.5, 'alert');
+$(window).load(function() {
+	fadeout($('notice'));
+	fadeout($('alert'));
 });
 
 function fadeout(element)
 {
 	if($(element) != undefined)
 	{
-		Effect.Fade(element, { duration: 1.5 });
+		element.fadeOut("slow");
 	}
 }
 
@@ -19,10 +19,10 @@ function show_element(element)
 	elements.splice(elements.indexOf(element), 1);
 
 	elements.each(function(e) {
-		if($(e) != undefined && $(e).visible()) { Effect.BlindUp(e, { duration: 0.5 }); }
+		if($(e) != undefined && $(e).visible()) { e,slideUp("slow"); }
 	});
 
-	Effect.BlindDown(element, { delay: 0.5, duration: 0.5 });
+	element.slideDown("slow");
 	if($('show_' + element + '_link') != undefined) { $('show_' + element + '_link').className = 'highlight'; }
 
 	elements.each(function(e) {
