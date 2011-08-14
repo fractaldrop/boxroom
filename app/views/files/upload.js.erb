@@ -1,4 +1,4 @@
-<% if @success %>
+<% unless @file.new_record? %>
     $('#upload_progress').append('<%= escape_javascript render("upload_success", :file => @file) %>');
 <% else %>
     $('#upload_progress').append('<%= escape_javascript render("upload_error", :file => @file) %>');

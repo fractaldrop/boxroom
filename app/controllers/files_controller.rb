@@ -31,7 +31,7 @@ class FilesController < ApplicationController
   # for AJAX requests
   def upload
     @file = @target_folder.user_files.build(:attachment => params[:file])
-    @success = @file.save
+    @file.save
     render :action => 'upload.js'#, :status => @success ? 200 : 406
   end
 

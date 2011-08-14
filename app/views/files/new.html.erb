@@ -8,7 +8,7 @@
         var allSucceeded = true;
         
         function uploadComplete() {
-            // redirect to the list of recently uploaded tracks
+            // redirect to the list of recently uploaded files
             if (allSucceeded) {
                 window.location = '<%= folder_path(@target_folder) %>';
             }
