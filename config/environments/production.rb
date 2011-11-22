@@ -54,7 +54,7 @@ Boxroom::Application.configure do
   config.assets.compile = false
 
   # Generate digests for assets URLs
-  config.assets.digest = true
+  config.assets.digest = false
 
   # Mail settings
   # config.action_mailer.delivery_method = :smtp

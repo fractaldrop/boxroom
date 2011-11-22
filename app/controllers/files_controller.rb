@@ -28,6 +28,13 @@ class FilesController < ApplicationController
     end
   end
 
+  # for AJAX requests
+  def upload
+    @file = @target_folder.user_files.build(:attachment => params[:file])
+    @file.save
+    render :action => 'upload.js'#, :status => @success ? 200 : 406
+  end
+
   # @file and @folder are set in require_existing_file
   def edit
   end
