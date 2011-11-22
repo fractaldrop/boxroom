@@ -25,7 +25,11 @@ Boxroom::Application.routes.draw do
   # Nested resources
   resources :folders, :shallow => true, :except => [:new, :create] do
     resources :folders, :only => [:new, :create]
-    resources :files, :only => [:new, :create]
+    resources :files, :only => [:new, :create] do
+      collection do
+        post :upload, :as => :upload
+      end
+    end
   end
 
   resources :files, :shallow => :true, :only => :show do

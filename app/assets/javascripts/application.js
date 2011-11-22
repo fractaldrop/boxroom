@@ -1,13 +1,18 @@
+//= require jquery
+//= require jquery_ujs
+//= require_self
+//= require plupload.full.js
+
 $(window).load(function() {
-	fadeout($('notice'));
-	fadeout($('alert'));
+  fadeout($('notice'));
+  fadeout($('alert'));
 });
 
 function fadeout(element)
 {
 	if($(element) != undefined)
 	{
-		element.fadeOut("slow");
+  		element.fadeOut("slow");
 	}
 }
 
@@ -19,7 +24,7 @@ function show_element(element)
 	elements.splice(elements.indexOf(element), 1);
 
 	elements.each(function(e) {
-		if($(e) != undefined && $(e).visible()) { e,slideUp("slow"); }
+		if($(e) != undefined && $(e).visible()) { e.slideUp("slow"); }
 	});
 
 	element.slideDown("slow");

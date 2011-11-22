@@ -240,7 +240,7 @@
   move_folder: Move folder
   move_file: Move file
   are_you_sure: Are you sure?
-  delete: Delete
+  delete_item: Delete
   remove_from_clipboard: Remove from clipboard
   clear_clipboard: Clear clipboard
 
@@ -251,6 +251,8 @@
   select_file: Select file
   upload_file: Upload file
   upload: Upload
+  upload_success: "The file %{file} was successfully uploaded."
+  upload_error: "There was a problem uploading %{file}."
 
   #folders/edit
   rename_folder: Rename folder
@@ -327,9 +329,9 @@
   two_months_from_now: Two months from now
   three_months_from_now: Three months from now
   half_year_from_now: A half year from now
-  download_link_could_not_be_sent: The download link could not be sent
+  share_link_could_not_be_sent: The download link could not be sent
   are_invalid_due_to: "is invalid due to %{email}"
-  download_link_email_subject: '[Boxroom] Someone shared a file with you'
+  share_link_email_subject: '[Boxroom] Someone shared a file with you'
   shared_successfully: The file was shared successfully.
 
   #shared/_header

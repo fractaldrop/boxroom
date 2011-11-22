@@ -1,8 +1,8 @@
 class FilesController < ApplicationController
   before_filter :require_existing_file, :only => [:show, :edit, :update, :destroy]
-  before_filter :require_existing_target_folder, :only => [:new, :create]
+  before_filter :require_existing_target_folder, :only => [:new, :create, :upload]
 
-  before_filter :require_create_permission, :only => [:new, :create]
+  before_filter :require_create_permission, :only => [:new, :create, :upload]
   before_filter :require_read_permission, :only => :show
   before_filter :require_update_permission, :only => [:edit, :update]
   before_filter :require_delete_permission, :only => :destroy
@@ -45,6 +45,14 @@ class FilesController < ApplicationController
   def destroy
     @file.destroy
     redirect_to folder_url(@folder)
+  end
+  
+   # for AJAX requests
+    # for AJAX requests
+  def upload
+    @file = @target_folder.user_files.build(:attachment => params[:file])
+    @success = @file.save
+    render :action => 'upload.js'#, :status => @success ? 200 : 406
   end
 
   private
